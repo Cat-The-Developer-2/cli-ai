@@ -1,6 +1,6 @@
 # CLI AI: Offline Terminal Chatbot Powered by Local LLM
 
-A blazing-fast, privacy-friendly AI chatbot and file summarizer that runs fully offline on your terminal using the lightweight SmolLM2-135M-Instruct model.
+A blazing-fast, privacy-friendly AI chatbot that runs fully offline on your terminal using the lightweight SmolLM2-135M-Instruct model.
 
 No APIs. No rate limits. No GPU required.
 
