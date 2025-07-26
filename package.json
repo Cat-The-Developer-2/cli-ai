@@ -1,5 +1,5 @@
 {
-  "name": "cli-ai",
+  "name": "cli-ai-smollm",
   "version": "1.0.0",
   "description": "A blazing-fast, privacy-first CLI chatbot powered by SmolLM2-135M-Instruct.",
   "author": "Aditya Chaurasia",
