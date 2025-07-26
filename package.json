@@ -2,17 +2,26 @@
   "name": "gemini-cli",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://aditya-chaurasia.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cat-The-Developer-2/cli-ai.git"
+  },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
+  "bin": "./index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@huggingface/transformers": "^3.7.0",
     "chalk": "^5.4.1",
     "figlet": "^1.8.2",
-    "inquirer": "^12.8.2"
+    "inquirer": "^12.8.2",
+    "ora": "^8.2.0",
+    "stopwatch-node": "^1.1.0"
   }
 }
