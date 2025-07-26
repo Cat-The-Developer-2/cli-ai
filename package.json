@@ -1,21 +1,30 @@
 {
-  "name": "gemini-cli",
+  "name": "cli-ai",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A blazing-fast, privacy-first CLI chatbot powered by SmolLM2-135M-Instruct.",
+  "author": "Aditya Chaurasia",
+  "license": "MIT",
   "homepage": "https://aditya-chaurasia.vercel.app/",
   "repository": {
     "type": "git",
     "url": "https://github.com/Cat-The-Developer-2/cli-ai.git"
   },
   "type": "module",
+  "main": "index.js",
+  "bin": {
+    "cli-ai": "./index.js"
+  },
   "scripts": {
     "start": "node ."
   },
-  "bin": "./index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "cli",
+    "chatbot",
+    "ai",
+    "smollm",
+    "offline",
+    "local-llm"
+  ],
   "dependencies": {
     "@huggingface/transformers": "^3.7.0",
     "chalk": "^5.4.1",
