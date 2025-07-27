@@ -4,7 +4,7 @@ A blazing-fast, privacy-friendly AI chatbot that runs fully offline on your term
 
 No APIs. No rate limits. No GPU required.
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 # Installation
 
@@ -31,11 +31,16 @@ SmolLM2 models are compact, efficient language models designed for local inferen
 - Like all language models, SmolLM2 may reflect biases present in the training data.
 - May occasionally generate culturally insensitive, stereotyped, or inaccurate content.
 
+### No Conversation Memory
+
+- Memory
+  🔒 No chat storage: This app does not retain or log any conversations.
+- Use it for casual, one-off queries, playful interaction, or lightweight knowledge exploration.
+- For long-term memory, summaries, or personal productivity, consider pairing with tools that support persistent chat.
+
 # Features
 
 - 💬 Chat with a local LLM in your terminal
-
-- 📄 Summarize text files directly
 
 - ⚡ Blazingly fast responses
 
