@@ -31,36 +31,55 @@ try {
   process.exit(1);
 }
 
-const TOKEN_LIMIT = 100;
+const TOKEN_LIMIT = 1024;
 
-console.log(`
-${chalk.green("1. 👋 Welcome to")} ${chalk.bold.cyan("CLI AI!")}
-${chalk.gray("2.")} ${chalk.white(
-  "A lightweight, blazing fast, private AI chatbot powered by"
-)} ${chalk.magenta("SmolLM2-135M-Instruct")}.
-${chalk.gray("3.")} ${chalk.yellow(
-  "Please don't have any typo error and use proper grammar."
-)}
-${chalk.gray("4.")} ${chalk.white(
-  "Download of model only happens once and"
-)} ${chalk.green("downloading only takes few minutes")} ${chalk.white(
-  "based on your internet speed."
-)}
-${chalk.gray("5.")} ${chalk.white(
-  "Model is very lightweight and can run on your lightweight desktop."
-)}
-${chalk.gray("6.")} ${chalk.white(
-  "Unlimited Requests, Token Limit:"
-)} ${chalk.bold.blue(`${TOKEN_LIMIT}`)}
-${chalk.gray("7.")} ${chalk.white("Temperature:")} ${chalk.bold(
-  "0.7"
-)}, ${chalk.white("Top_p:")} ${chalk.bold("0.9")}
-${chalk.gray("8.")} ${chalk.white("Type")} ${chalk.cyan(
-  "'exit'"
-)} ${chalk.white("to exit.")}
-`);
+console.log(
+  "\n" +
+    chalk.bgBlue.white.bold("   👋 Welcome to CLI AI!   ") +
+    "\n" +
+    chalk.gray("────────────────────────────────────────────") +
+    "\n" +
+    chalk.white(" A lightweight, blazing-fast, private AI chatbot") +
+    "\n" +
+    chalk.white("   powered by ") +
+    chalk.bgMagenta.white.bold(" SmolLM2-135M-Instruct ") +
+    "\n\n" +
+    chalk.yellow("  Please use correct grammar and avoid typos.") +
+    "\n\n" +
+    chalk.white("  Model downloads only once, usually within") +
+    "\n" +
+    chalk.green("   a few minutes") +
+    chalk.white(" based on your internet speed.") +
+    "\n\n" +
+    chalk.white(" Runs on low-end devices. No GPU needed.") +
+    "\n" +
+    chalk.cyan("  Fully private. No API or internet needed after setup.") +
+    "\n\n" +
+    chalk.white(" Unlimited requests") +
+    chalk.white(" | ") +
+    chalk.white("Token Limit: ") +
+    chalk.bgBlue.white.bold(` ${TOKEN_LIMIT} `) +
+    "\n" +
+    chalk.white(" Temp: ") +
+    chalk.bold("0.1") +
+    chalk.white(" | Top_p: ") +
+    chalk.bold("0.95") +
+    "\n" +
+    chalk.white(" Type ") +
+    chalk.bgCyan.black.bold(" exit ") +
+    chalk.white(" to quit.") +
+    "\n" +
+    chalk.gray("────────────────────────────────────────────\n") +
+    "\n"
+);
 
-// Start interaction loop
+console.log(
+  chalk.bgYellow.black(" ⚠️  DISCLAIMER ") +
+    chalk.yellow(
+      " This is a lightweight local AI model (135M). It may give incorrect answers for complex or vague questions. Please ask clear, specific prompts for best results."
+    )
+);
+
 async function chat() {
   while (true) {
     const { prompt } = await inquirer.prompt([
@@ -84,18 +103,20 @@ async function chat() {
 
     const response = await generator(formattedPrompt, {
       max_new_tokens: TOKEN_LIMIT,
-      temperature: 0.7,
-      top_p: 0.9,
+      temperature: 0.1,
+      top_p: 0.95,
+      repetition_penalty: 1.2,
+      top_k: 50,
     });
 
     spinnerRes.stop();
-
     sw.stop();
 
-    console.log(
-      chalk.yellowBright("AI:"),
-      response[0].generated_text.replace(formattedPrompt, "").trim()
-    );
+    const answer = response[0].generated_text
+      .replace(formattedPrompt, "")
+      .trim();
+
+    console.log(chalk.yellowBright("AI:"), answer);
 
     console.log("\n");
 
@@ -106,7 +127,6 @@ async function chat() {
       chalk.gray("Response generated in ") +
         chalk.bold.green(`${responseTime} seconds`)
     );
-
     console.log("\n");
   }
 }

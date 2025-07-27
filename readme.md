@@ -12,6 +12,25 @@ No APIs. No rate limits. No GPU required.
 npx cli-ai-smollm2
 ```
 
+# Limitations
+
+SmolLM2 models are compact, efficient language models designed for local inference with fast performance on CPUs. While they are capable and lightweight, they come with certain limitations users should be aware of:
+
+### Language Scope
+
+- Primarily trained to understand and generate content in English.
+- Performance on non-English prompts may be inconsistent.
+
+### Reasoning and Accuracy
+
+- Responses may not always be factually correct, logically consistent, or contextually relevant.
+- Not suitable for tasks requiring deep reasoning, precise computation, or domain expertise (e.g., legal, financial, or medical advice).
+
+### Bias and Fairness
+
+- Like all language models, SmolLM2 may reflect biases present in the training data.
+- May occasionally generate culturally insensitive, stereotyped, or inaccurate content.
+
 # Features
 
 - 💬 Chat with a local LLM in your terminal

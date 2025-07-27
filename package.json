@@ -1,6 +1,6 @@
 {
   "name": "cli-ai-smollm2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A blazing-fast, privacy-first CLI chatbot powered by SmolLM2-135M-Instruct.",
   "author": "Aditya Chaurasia",
   "license": "MIT",
